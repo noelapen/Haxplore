@@ -3,6 +3,7 @@ import { LandingPage } from './components/LandingPage';
 import { AuthPage } from './components/AuthPage';
 import { UserDashboard } from './components/UserDashboard';
 import { AdminDashboard } from './components/AdminDashboard';
+import 'leaflet/dist/leaflet.css';
 
 type UserType = 'user' | 'admin' | null;
 type AuthState = 'landing' | 'auth' | 'authenticated';
