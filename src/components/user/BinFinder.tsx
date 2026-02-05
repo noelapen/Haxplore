@@ -38,49 +38,16 @@ interface Bin {
   distance?: number;
 }
 
-const BINS: Bin[] = [
-  { id: 'mh-1', name: 'Mumbai E-Tech Hub', lat: 19.0760, lng: 72.8777, address: 'Andheri East, Mumbai, MH', acceptedItems: ['phone', 'battery', 'charger'], fillLevel: 35, status: 'operational' },
-  { id: 'mh-2', name: 'BKC Green Bin', lat: 19.0600, lng: 72.8697, address: 'BKC, Mumbai, MH', acceptedItems: ['laptop', 'hard-drive'], fillLevel: 55, status: 'operational' },
-  { id: 'mh-3', name: 'Navi Mumbai Recycle Point', lat: 19.0330, lng: 73.0297, address: 'Vashi, Navi Mumbai, MH', acceptedItems: ['phone', 'tablet'], fillLevel: 80, status: 'full' },
-  { id: 'mh-4', name: 'Pune IT Park Bin', lat: 18.5204, lng: 73.8567, address: 'Hinjewadi, Pune, MH', acceptedItems: ['battery', 'cable', 'charger'], fillLevel: 20, status: 'operational' },
-  { id: 'mh-5', name: 'Nagpur Eco Drop', lat: 21.1458, lng: 79.0882, address: 'Sitabuldi, Nagpur, MH', acceptedItems: ['phone', 'watch'], fillLevel: 40, status: 'operational' },
-  { id: 'mh-6', name: 'Nashik Digital Bin', lat: 19.9975, lng: 73.7898, address: 'College Road, Nashik, MH', acceptedItems: ['laptop', 'charger'], fillLevel: 60, status: 'operational' },
-  { id: 'mh-7', name: 'Aurangabad E-Waste Hub', lat: 19.8762, lng: 75.3433, address: 'CIDCO, Aurangabad, MH', acceptedItems: ['tablet', 'battery'], fillLevel: 25, status: 'operational' },
-  { id: 'mh-8', name: 'Thane Smart Bin', lat: 19.2183, lng: 72.9781, address: 'Ghodbunder Rd, Thane, MH', acceptedItems: ['phone', 'headphones'], fillLevel: 70, status: 'operational' },
-  { id: 'mh-9', name: 'Kolhapur E-Recycle', lat: 16.7050, lng: 74.2433, address: 'Shivaji Nagar, Kolhapur, MH', acceptedItems: ['cable', 'charger'], fillLevel: 15, status: 'operational' },
-  { id: 'mh-10', name: 'Solapur Green Tech Bin', lat: 17.6599, lng: 75.9064, address: 'Station Rd, Solapur, MH', acceptedItems: ['battery', 'watch'], fillLevel: 90, status: 'full' },
-  { id: 'ka-1', name: 'Bangalore Central Bin', lat: 12.9716, lng: 77.5946, address: 'MG Road, Bengaluru, KA', acceptedItems: ['phone', 'laptop'], fillLevel: 30, status: 'operational' },
-  { id: 'ka-2', name: 'Electronic City E-Hub', lat: 12.8399, lng: 77.6770, address: 'Electronic City, KA', acceptedItems: ['hard-drive', 'cable'], fillLevel: 45, status: 'operational' },
-  { id: 'ka-3', name: 'Whitefield Smart Bin', lat: 12.9698, lng: 77.7500, address: 'Whitefield, Bengaluru, KA', acceptedItems: ['tablet', 'charger'], fillLevel: 60, status: 'operational' },
-  { id: 'ka-4', name: 'Mysore Digital Drop', lat: 12.2958, lng: 76.6394, address: 'VV Mohalla, Mysuru, KA', acceptedItems: ['phone', 'battery'], fillLevel: 20, status: 'operational' },
-  { id: 'ka-5', name: 'Hubli Eco Bin', lat: 15.3647, lng: 75.1240, address: 'Keshwapur, Hubli, KA', acceptedItems: ['laptop', 'watch'], fillLevel: 50, status: 'operational' },
-  { id: 'ka-6', name: 'Mangalore E-Waste Point', lat: 12.9141, lng: 74.8560, address: 'Hampankatta, Mangalore, KA', acceptedItems: ['phone', 'headphones'], fillLevel: 65, status: 'operational' },
-  { id: 'ka-7', name: 'Belgaum Green Tech', lat: 15.8497, lng: 74.4977, address: 'Tilakwadi, Belgaum, KA', acceptedItems: ['battery', 'charger'], fillLevel: 10, status: 'operational' },
-  { id: 'ka-8', name: 'Davangere E-Bin', lat: 14.4644, lng: 75.9218, address: 'PJ Extension, Davangere, KA', acceptedItems: ['tablet', 'cable'], fillLevel: 75, status: 'operational' },
-  { id: 'ka-9', name: 'Udupi Smart Recycle', lat: 13.3409, lng: 74.7421, address: 'Manipal Rd, Udupi, KA', acceptedItems: ['phone', 'watch'], fillLevel: 40, status: 'operational' },
-  { id: 'ka-10', name: 'Tumkur E-Drop', lat: 13.3392, lng: 77.1130, address: 'BH Road, Tumkur, KA', acceptedItems: ['laptop', 'battery'], fillLevel: 85, status: 'full' },
-  { id: 'dl-1', name: 'Connaught Place Green Bin', lat: 28.6139, lng: 77.2090, address: 'CP, New Delhi, DL', acceptedItems: ['phone', 'charger'], fillLevel: 25, status: 'operational' },
-  { id: 'dl-2', name: 'Dwarka E-Waste Hub', lat: 28.5921, lng: 77.0460, address: 'Sector 10, Dwarka, DL', acceptedItems: ['laptop', 'battery'], fillLevel: 55, status: 'operational' },
-  { id: 'dl-3', name: 'Rohini Smart Bin', lat: 28.7490, lng: 77.0565, address: 'Sector 3, Rohini, DL', acceptedItems: ['tablet', 'cable'], fillLevel: 40, status: 'operational' },
-  { id: 'dl-4', name: 'Saket Digital Drop', lat: 28.5244, lng: 77.2066, address: 'Saket, New Delhi, DL', acceptedItems: ['phone', 'watch'], fillLevel: 15, status: 'operational' },
-  { id: 'dl-5', name: 'Karol Bagh E-Bin', lat: 28.6512, lng: 77.1900, address: 'Karol Bagh, DL', acceptedItems: ['battery', 'headphones'], fillLevel: 70, status: 'operational' },
-  { id: 'dl-6', name: 'Lajpat Nagar Eco Point', lat: 28.5672, lng: 77.2436, address: 'Lajpat Nagar, DL', acceptedItems: ['charger', 'cable'], fillLevel: 60, status: 'operational' },
-  { id: 'dl-7', name: 'Pitampura Green Tech', lat: 28.7033, lng: 77.1322, address: 'Pitampura, DL', acceptedItems: ['phone', 'tablet'], fillLevel: 35, status: 'operational' },
-  { id: 'dl-8', name: 'Janakpuri E-Recycle', lat: 28.6219, lng: 77.0878, address: 'Janakpuri, DL', acceptedItems: ['laptop', 'hard-drive'], fillLevel: 90, status: 'full' },
-  { id: 'dl-9', name: 'Vasant Kunj Smart Bin', lat: 28.5273, lng: 77.1494, address: 'Vasant Kunj, DL', acceptedItems: ['battery', 'watch'], fillLevel: 20, status: 'operational' },
-  { id: 'dl-10', name: 'Mayur Vihar Digital Hub', lat: 28.6046, lng: 77.2893, address: 'Mayur Vihar, DL', acceptedItems: ['phone', 'charger'], fillLevel: 45, status: 'operational' },
-];
-
 const WASTE_TYPES = [
-  { id: 'phone', label: 'Phone', icon: Smartphone, color: 'bg-blue-500' },
-  { id: 'laptop', label: 'Laptop', icon: Laptop, color: 'bg-purple-500' },
-  { id: 'tablet', label: 'Tablet', icon: Tablet, color: 'bg-indigo-500' },
-  { id: 'battery', label: 'Battery', icon: Battery, color: 'bg-green-500' },
-  { id: 'cable', label: 'Cable', icon: Cable, color: 'bg-orange-500' },
-  { id: 'charger', label: 'Charger', icon: Cable, color: 'bg-yellow-500' },
-  { id: 'headphones', label: 'Headphones', icon: Headphones, color: 'bg-pink-500' },
-  { id: 'watch', label: 'Watch', icon: Watch, color: 'bg-teal-500' },
-  { id: 'hard-drive', label: 'Hard Drive', icon: HardDrive, color: 'bg-red-500' },
+  { id: "phone", label: "Phone", icon: Smartphone, color: "bg-blue-500" },
+  { id: "laptop", label: "Laptop", icon: Laptop, color: "bg-purple-500" },
+  { id: "tablet", label: "Tablet", icon: Tablet, color: "bg-indigo-500" },
+  { id: "battery", label: "Battery", icon: Battery, color: "bg-green-500" },
+  { id: "cable", label: "Cable", icon: Cable, color: "bg-orange-500" },
+  { id: "charger", label: "Charger", icon: Cable, color: "bg-yellow-500" },
+  { id: "headphones", label: "Headphones", icon: Headphones, color: "bg-pink-500" },
+  { id: "watch", label: "Watch", icon: Watch, color: "bg-teal-500" },
+  { id: "hard-drive", label: "Hard Drive", icon: HardDrive, color: "bg-red-500" },
 ];
 
 export function BinFinder() {
@@ -92,12 +59,15 @@ export function BinFinder() {
   const [highlightedBin, setHighlightedBin] = useState<Bin | null>(null);
 
   const [locationMode, setLocationMode] = useState<"current" | "search">("search");
-
-  // IMPORTANT CHANGE: start as null
   const [userLocation, setUserLocation] = useState<{ lat: number; lng: number } | null>(null);
 
   const [searchInput, setSearchInput] = useState("");
   const [isSearching, setIsSearching] = useState(false);
+
+  const [locationName, setLocationName] = useState<string>("");
+
+  const [bins, setBins] = useState<Bin[]>([]);
+  const [loadingBins, setLoadingBins] = useState(true);
 
   const mapRef = useRef<HTMLDivElement>(null);
   const leafletInstance = useRef<L.Map | null>(null);
@@ -106,6 +76,94 @@ export function BinFinder() {
   const routingControlRef = useRef<any>(null);
   const routeLinesRef = useRef<L.Polyline[]>([]);
 
+  // ---------------- FETCH BINS FROM DATABASE ----------------
+  useEffect(() => {
+    const fetchBins = async () => {
+      try {
+        const res = await fetch("http://localhost:5000/api/bins");
+        const data = await res.json();
+        setBins(data);
+      } catch (err) {
+        console.error("Failed to fetch bins:", err);
+      } finally {
+        setLoadingBins(false);
+      }
+    };
+
+    fetchBins();
+  }, []);
+
+  // ---------------- LOCATION NAME (Reverse Geocode) ----------------
+  const fetchLocationName = async (lat: number, lng: number) => {
+    try {
+      const res = await fetch(
+        `https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lng}`
+      );
+
+      const data = await res.json();
+
+      if (data && data.address) {
+        const place =
+          data.address.city ||
+          data.address.town ||
+          data.address.village ||
+          data.address.suburb ||
+          data.address.state ||
+          "Unknown Location";
+
+        const state = data.address.state || "";
+        const country = data.address.country || "";
+
+        setLocationName(`${place}${state ? ", " + state : ""}${country ? ", " + country : ""}`);
+      } else {
+        setLocationName("Unknown Location");
+      }
+    } catch (error) {
+      setLocationName("Unknown Location");
+    }
+  };
+
+  useEffect(() => {
+    if (userLocation) {
+      fetchLocationName(userLocation.lat, userLocation.lng);
+    }
+  }, [userLocation]);
+
+  // ---------------- GOOGLE MAPS REDIRECT ----------------
+  const openGoogleMapsDirections = () => {
+    if (!userLocation || !highlightedBin) return;
+
+    const url = `https://www.google.com/maps/dir/?api=1&origin=${userLocation.lat},${userLocation.lng}&destination=${highlightedBin.lat},${highlightedBin.lng}&travelmode=driving`;
+    window.open(url, "_blank");
+  };
+
+  const addGoogleMapsButtonToRoutingPanel = () => {
+    setTimeout(() => {
+      const container = document.querySelector(".leaflet-routing-container");
+
+      if (container && !document.getElementById("googleMapsBtn")) {
+        const btn = document.createElement("button");
+        btn.id = "googleMapsBtn";
+        btn.innerText = "Open in Google Maps";
+
+        btn.style.width = "100%";
+        btn.style.marginTop = "12px";
+        btn.style.padding = "10px";
+        btn.style.borderRadius = "1px";
+        btn.style.border = "none";
+        btn.style.cursor = "pointer";
+        btn.style.fontWeight = "600";
+        btn.style.background = "#06b75f";
+        btn.style.color = "white";
+
+        btn.onclick = openGoogleMapsDirections;
+
+        container.appendChild(btn);
+      }
+    }, 400);
+  };
+
+  // ---------------- GET CURRENT LOCATION ----------------
   const getCurrentLocation = () => {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
@@ -121,6 +179,7 @@ export function BinFinder() {
     }
   };
 
+  // ---------------- SEARCH LOCATION ----------------
   const searchLocation = async () => {
     if (!searchInput) return;
 
@@ -150,18 +209,20 @@ export function BinFinder() {
     }
   };
 
+  // ---------------- DISTANCE CALCULATION ----------------
   const binsWithDistance = useMemo(() => {
     if (!userLocation) return [];
 
-    return BINS.map((bin) => {
+    return bins.map((bin) => {
       const distance = Math.sqrt(
         Math.pow((bin.lat - userLocation.lat) * 111, 2) +
           Math.pow((bin.lng - userLocation.lng) * 111 * Math.cos((userLocation.lat * Math.PI) / 180), 2)
       );
       return { ...bin, distance };
     });
-  }, [userLocation]);
+  }, [userLocation, bins]);
 
+  // ---------------- FILTER BINS ----------------
   const filteredBins = useMemo(() => {
     if (!userLocation) return [];
 
@@ -177,7 +238,7 @@ export function BinFinder() {
     return filtered.sort((a, b) => a.distance! - b.distance!);
   }, [binsWithDistance, selectedWasteType, onlyOperational, maxDistance, highlightedBin, viewMode, userLocation]);
 
-  // Initialize Leaflet Map ONLY when location exists
+  // ---------------- MAP INIT ----------------
   useEffect(() => {
     if (!userLocation) return;
 
@@ -187,7 +248,7 @@ export function BinFinder() {
       leafletInstance.current = L.map(mapRef.current).setView(center as L.LatLngExpression, 13);
 
       L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-        attribution: "© OpenStreetMap",
+        // attribution: "© OpenStreetMap",
       }).addTo(leafletInstance.current);
 
       markersGroup.current = L.layerGroup().addTo(leafletInstance.current);
@@ -201,7 +262,7 @@ export function BinFinder() {
     };
   }, [viewMode, highlightedBin, userLocation]);
 
-  // Draw Markers + Route
+  // ---------------- MAP MARKERS + ROUTE DRAW ----------------
   useEffect(() => {
     if (!userLocation) return;
     if (!leafletInstance.current || !markersGroup.current) return;
@@ -224,27 +285,63 @@ export function BinFinder() {
       routeLinesRef.current = [];
     }
 
-    const defaultIcon = L.icon({
-      iconUrl: "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon.png",
-      shadowUrl: "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png",
-      iconSize: [25, 41],
-      iconAnchor: [12, 41],
+    // E-WASTE ICON (DESTINATION)
+    const ewasteIcon = L.divIcon({
+      html: `
+        <div style="
+          width: 42px;
+          height: 42px;
+          background: #16a34a;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          box-shadow: 0px 6px 12px rgba(0,0,0,0.25);
+          border: 3px solid white;
+          font-size: 20px;
+        ">
+          ♻️
+        </div>
+      `,
+      className: "",
+      iconSize: [42, 42],
+      iconAnchor: [21, 42],
+      popupAnchor: [0, -40],
     });
 
-    // User Marker
+    //   className: "",
+    //   html: `
+    //     <div style="
+    //       width: 42px;
+    //       height: 42px;
+    //       background: #059669;
+    //       border-radius: 12px;
+    //       display: flex;
+    //       align-items: center;
+    //       justify-content: center;
+    //       box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+    //       border: 3px solid white;
+    //     ">
+    //       ♻️
+    //     </div>
+    //   `,
+    //   iconSize: [42, 42],
+    //   iconAnchor: [21, 42],
+    // });
+
+    // User location marker (circle)
     L.circleMarker([userLocation.lat, userLocation.lng], {
-      radius: 8,
-      fillColor: "#3b82f6",
-      color: "#fff",
+      radius: 10,
+      fillColor: "#2563eb",
+      color: "#ffffff",
       weight: 3,
       fillOpacity: 1,
     })
       .addTo(markersGroup.current)
       .bindPopup("Your Location");
 
-    // Bin Markers
     filteredBins.forEach((bin) => {
-      const marker = L.marker([bin.lat, bin.lng], { icon: defaultIcon })
+      const marker = L.marker([bin.lat, bin.lng], { icon: ewasteIcon })
         .addTo(markersGroup.current!)
         .bindPopup(`<b>${bin.name}</b><br/>${bin.address}<br/><b>${bin.fillLevel}% Full</b>`);
 
@@ -271,8 +368,13 @@ export function BinFinder() {
 
         routingControlRef.current = control;
 
+        addGoogleMapsButtonToRoutingPanel();
+
         router.route(
-          [L.Routing.waypoint(L.latLng(userLocation.lat, userLocation.lng)), L.Routing.waypoint(L.latLng(bin.lat, bin.lng))],
+          [
+            L.Routing.waypoint(L.latLng(userLocation.lat, userLocation.lng)),
+            L.Routing.waypoint(L.latLng(bin.lat, bin.lng)),
+          ],
           (err: any, routes: any[]) => {
             if (err || !routes || routes.length === 0) {
               alert("Routing failed.");
@@ -285,23 +387,48 @@ export function BinFinder() {
             routes.forEach((route) => {
               const isShortest = route === shortestRoute;
 
-              const line = L.polyline(route.coordinates, {
-                color: isShortest ? "#10b981" : "#ef4444",
-                weight: isShortest ? 6 : 4,
-                dashArray: isShortest ? undefined : "6, 10",
-                opacity: 0.9,
-              }).addTo(leafletInstance.current!);
+              if (isShortest) {
+                const borderLine = L.polyline(route.coordinates, {
+                  color: "#121621",
+                  weight: 8,
+                  opacity: 0.9,
+                }).addTo(leafletInstance.current!);
 
-              const minutes = Math.round(route.summary.totalTime / 60);
+                const mainLine = L.polyline(route.coordinates, {
+                  color: "#2563eb",
+                  weight: 5,
+                  opacity: 1,
+                }).addTo(leafletInstance.current!);
 
-              line.bindTooltip(`🕒 ${minutes} min`, {
-                permanent: false,
-                direction: "top",
-                sticky: true,
-                offset: [0, -5],
-              });
+                routeLinesRef.current.push(borderLine);
+                routeLinesRef.current.push(mainLine);
 
-              routeLinesRef.current.push(line);
+                const minutes = Math.round(route.summary.totalTime / 60);
+
+                mainLine.bindTooltip(`🕒 ${minutes} min`, {
+                  permanent: false,
+                  direction: "top",
+                  sticky: true,
+                  offset: [0, -5],
+                });
+              } else {
+                const altLine = L.polyline(route.coordinates, {
+                  color: "#8cb9f0",
+                  weight: 5,
+                  opacity: 0.35,
+                }).addTo(leafletInstance.current!);
+
+                routeLinesRef.current.push(altLine);
+
+                const minutes = Math.round(route.summary.totalTime / 60);
+
+                altLine.bindTooltip(`🕒 ${minutes} min`, {
+                  permanent: false,
+                  direction: "top",
+                  sticky: true,
+                  offset: [0, -5],
+                });
+              }
             });
 
             const bounds = L.latLngBounds(shortestRoute.coordinates);
@@ -358,28 +485,22 @@ export function BinFinder() {
       </div>
 
       {/* LOCATION SELECT BAR */}
-      <div className="flex flex-col md:flex-row items-start md:items-center gap-4 mb-6 p-4 bg-emerald-50/50 rounded-xl border border-emerald-100">
+      <div className="flex items-center justify-between gap-4 mb-6 p-4 bg-emerald-50/50 rounded-xl border border-emerald-100">
         <div className="flex items-center gap-2">
           <MapPin className="text-emerald-600 w-5 h-5" />
-          <select
-            className="bg-white border border-gray-300 rounded-lg px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-emerald-500"
-            value={locationMode}
-            onChange={(e) => {
-              const val = e.target.value as "current" | "search";
-              setLocationMode(val);
 
-              if (val === "current") {
-                getCurrentLocation();
-              }
-            }}
-          >
-            <option value="search">Search Location</option>
-            <option value="current">Current Location</option>
-          </select>
+          <div className="flex items-center">
+            <button
+              onClick={getCurrentLocation}
+              className="flex items-center gap-2 px-4 py-2 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 transition whitespace-nowrap"
+            >
+              <LocateFixed className="w-4 h-4" /> Use Current Location
+            </button>
+          </div>
         </div>
 
         {locationMode === "search" && (
-          <div className="flex items-center gap-2 w-full md:w-auto flex-1">
+          <div className="flex items-center gap-2 flex-1 max-w-[520px]">
             <input
               type="text"
               placeholder="Enter your location..."
@@ -398,30 +519,17 @@ export function BinFinder() {
           </div>
         )}
 
-        {locationMode === "current" && (
-          <button
-            onClick={getCurrentLocation}
-            className="flex items-center gap-2 px-4 py-2 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 transition"
-          >
-            <LocateFixed className="w-4 h-4" />
-            Use Current Location
-          </button>
-        )}
-
         {userLocation && (
-          <div className="text-xs text-gray-500">
+          <div className="text-xs text-gray-500 whitespace-nowrap ml-auto">
             Showing results near:{" "}
-            <span className="font-semibold text-emerald-700">
-              {userLocation.lat.toFixed(4)}, {userLocation.lng.toFixed(4)}
-            </span>
+            <span className="font-semibold text-emerald-700">{locationName || "Loading..."}</span>
           </div>
         )}
       </div>
 
-      {/* PLACEHOLDER BEFORE LOCATION */}
       {!userLocation ? (
         <div className="p-20 text-center border-2 border-dashed border-emerald-200 rounded-2xl text-gray-500 bg-gradient-to-br from-white via-emerald-50 to-white shadow-sm">
-          <br></br>
+          <br />
           <div className="w-16 h-16 mx-auto rounded-full bg-emerald-100 flex items-center justify-center mb-5">
             <MapPin className="w-8 h-8 text-emerald-600" />
           </div>
@@ -430,31 +538,12 @@ export function BinFinder() {
 
           <p className="text-sm text-gray-500 max-w-md mx-auto mb-6 leading-relaxed">
             Choose <span className="font-semibold text-emerald-700">Search Location</span> or{" "}
-            <span className="font-semibold text-emerald-700">Current Location</span> to view available e-waste bins near you.
+            <span className="font-semibold text-emerald-700">Current Location</span> to view available e-waste bins near
+            you.
           </p>
-
-          {/* <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <button
-              onClick={() => setLocationMode("search")}
-              className="px-5 py-3 rounded-xl bg-white border border-gray-200 shadow-sm hover:shadow-md transition flex items-center justify-center gap-2 font-semibold text-gray-700"
-            >
-              <Search className="w-4 h-4" /> Search Location
-            </button>
-
-            <button
-              onClick={() => {
-                setLocationMode("current");
-                getCurrentLocation();
-              }}
-              className="px-5 py-3 rounded-xl bg-emerald-600 text-white shadow-md hover:bg-emerald-700 transition flex items-center justify-center gap-2 font-semibold"
-            >
-              <LocateFixed className="w-4 h-4" /> Use Current Location
-            </button>
-          </div> */}
         </div>
       ) : (
         <>
-          {/* TOP BAR */}
           <div className="flex items-center justify-between mb-4">
             <div className="flex items-center gap-3">
               <h3 className="font-semibold text-gray-900">
@@ -496,7 +585,6 @@ export function BinFinder() {
             </div>
           </div>
 
-          {/* FILTER PANEL */}
           {filterOpen && (
             <div className="mb-4 p-4 bg-white border border-gray-200 rounded-lg shadow-sm space-y-4">
               <label className="flex items-center gap-2 cursor-pointer">
@@ -523,8 +611,12 @@ export function BinFinder() {
             </div>
           )}
 
-          {/* LIST / MAP */}
-          {viewMode === "list" ? (
+          {loadingBins ? (
+            <div className="bg-white rounded-lg p-8 text-center border border-gray-200">
+              <RefreshCw className="w-10 h-10 text-gray-400 mx-auto mb-3 animate-spin" />
+              <p className="text-gray-600 text-sm">Loading bins from database...</p>
+            </div>
+          ) : viewMode === "list" ? (
             <div className="space-y-3">
               {filteredBins.length === 0 ? (
                 <div className="bg-white rounded-lg p-8 text-center border border-gray-200">
@@ -617,14 +709,10 @@ export function BinFinder() {
                     </button>
 
                     <button
-                      onClick={() =>
-                        window.open(
-                          `https://www.google.com/maps/dir/?api=1&origin=${userLocation.lat},${userLocation.lng}&destination=${highlightedBin.lat},${highlightedBin.lng}`
-                        )
-                      }
-                      className="flex-1 text-xs bg-emerald-600 text-white py-1.5 rounded hover:bg-emerald-700 font-medium"
+                      onClick={openGoogleMapsDirections}
+                      className="flex-1 text-xs bg-blue-600 text-white py-1.5 rounded hover:bg-blue-700 font-medium"
                     >
-                      External Directions
+                      Google Maps
                     </button>
                   </div>
                 </div>

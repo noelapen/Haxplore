@@ -1,5 +1,5 @@
 {
-      "name": "Smart E-Waste Bin Website",
+      "name": "smart-e-waste-bin-website",
       "version": "0.1.0",
       "private": true,
       "dependencies": {
@@ -32,11 +32,17 @@
             "class-variance-authority": "^0.7.1",
             "clsx": "*",
             "cmdk": "^1.1.1",
+            "cors": "^2.8.6",
+            "dotenv": "^17.2.3",
             "embla-carousel-react": "^8.6.0",
+            "express": "^5.2.1",
+            "firebase": "^12.8.0",
+            "firebase-admin": "^13.6.0",
             "input-otp": "^1.4.2",
             "leaflet": "^1.9.4",
             "leaflet-routing-machine": "^3.2.12",
             "lucide-react": "^0.487.0",
+            "mongoose": "^9.1.6",
             "next-themes": "^0.4.6",
             "react": "^18.3.1",
             "react-day-picker": "^8.10.1",
@@ -53,10 +59,25 @@
             "@types/leaflet": "^1.9.21",
             "@types/node": "^20.10.0",
             "@vitejs/plugin-react-swc": "^3.10.2",
+            "nodemon": "^3.1.11",
             "vite": "6.3.5"
       },
       "scripts": {
             "dev": "vite",
             "build": "vite build"
-      }
+      },
+      "description": "This is a code bundle for Smart E-Waste Bin Website. The original project is available at https://www.figma.com/design/qF5D7x6iziuvjIFnqjDvKs/Smart-E-Waste-Bin-Website.",
+      "main": "index.js",
+      "repository": {
+            "type": "git",
+            "url": "git+https://github.com/noelapen/Haxplore.git"
+      },
+      "keywords": [],
+      "author": "",
+      "license": "ISC",
+      "type": "commonjs",
+      "bugs": {
+            "url": "https://github.com/noelapen/Haxplore/issues"
+      },
+      "homepage": "https://github.com/noelapen/Haxplore#readme"
 }
