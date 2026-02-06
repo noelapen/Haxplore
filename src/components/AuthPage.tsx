@@ -190,7 +190,19 @@ export function AuthPage({ userType, onAuthSuccess, onBack }: AuthPageProps) {
             </span>
           </button>
         </div>
+<<<<<<< HEAD
       </div>
     </div>
   );
 }
+=======
+
+        {/* Demo credentials hint */}
+        <div className="mt-6 p-3 bg-gray-50 rounded-lg text-xs text-gray-600 text-center">
+          💡 Demo: Use any email/password to {isLogin ? 'login' : 'register'}
+        </div>
+      </div>
+    </div>
+  );
+}
+>>>>>>> b64e92c44009ab348791deb8f5a1b164104819e4

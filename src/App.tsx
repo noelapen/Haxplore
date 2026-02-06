@@ -3,7 +3,10 @@ import { LandingPage } from './components/LandingPage';
 import { AuthPage } from './components/AuthPage';
 import { UserDashboard } from './components/UserDashboard';
 import { AdminDashboard } from './components/AdminDashboard';
+<<<<<<< HEAD
 import { ThemeProvider } from './contexts/ThemeContext';
+=======
+>>>>>>> b64e92c44009ab348791deb8f5a1b164104819e4
 
 type UserType = 'user' | 'admin' | null;
 type AuthState = 'landing' | 'auth' | 'authenticated';
@@ -49,6 +52,7 @@ export default function App() {
     setAuthState('landing');
   };
 
+<<<<<<< HEAD
   return (
     <ThemeProvider>
       {authState === 'landing' && <LandingPage onSelectUserType={handleUserTypeSelect} />}
@@ -71,3 +75,29 @@ export default function App() {
     </ThemeProvider>
   );
 }
+=======
+  if (authState === 'landing') {
+    return <LandingPage onSelectUserType={handleUserTypeSelect} />;
+  }
+
+  if (authState === 'auth') {
+    return (
+      <AuthPage
+        userType={userType!}
+        onAuthSuccess={handleAuthSuccess}
+        onBack={handleBackToLanding}
+      />
+    );
+  }
+
+  if (authState === 'authenticated') {
+    if (userType === 'admin') {
+      return <AdminDashboard user={currentUser} onLogout={handleLogout} />;
+    } else {
+      return <UserDashboard user={currentUser} onLogout={handleLogout} />;
+    }
+  }
+
+  return null;
+}
+>>>>>>> b64e92c44009ab348791deb8f5a1b164104819e4

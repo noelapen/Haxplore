@@ -3,9 +3,12 @@ import { BinMonitoring } from './admin/BinMonitoring';
 import { Analytics } from './admin/Analytics';
 import { AlertsPanel } from './admin/AlertsPanel';
 import { UserManagement } from './admin/UserManagement';
+<<<<<<< HEAD
 import { Notifications } from './Notifications';
 import { AdminTutorial } from './AdminTutorial';
 import { EnhancedMascotWelcome } from './EnhancedMascotWelcome';
+=======
+>>>>>>> b64e92c44009ab348791deb8f5a1b164104819e4
 import {
   LayoutDashboard,
   MapPin,
@@ -14,7 +17,10 @@ import {
   Users,
   LogOut,
   Bell,
+<<<<<<< HEAD
   HelpCircle,
+=======
+>>>>>>> b64e92c44009ab348791deb8f5a1b164104819e4
 } from 'lucide-react';
 
 interface AdminDashboardProps {
@@ -27,6 +33,7 @@ type ActiveView = 'overview' | 'bins' | 'analytics' | 'alerts' | 'users';
 export function AdminDashboard({ user, onLogout }: AdminDashboardProps) {
   const [activeView, setActiveView] = useState<ActiveView>('overview');
   const [alertCount] = useState(3);
+<<<<<<< HEAD
   const [showNotifications, setShowNotifications] = useState(false);
   const [showTutorial, setShowTutorial] = useState(() => {
     return !localStorage.getItem('admin_tutorial_dont_show');
@@ -45,6 +52,8 @@ export function AdminDashboard({ user, onLogout }: AdminDashboardProps) {
   const handleRestartTutorial = () => {
     setShowTutorial(true);
   };
+=======
+>>>>>>> b64e92c44009ab348791deb8f5a1b164104819e4
 
   return (
     <div className="min-h-screen bg-gray-50 flex">
@@ -177,10 +186,14 @@ export function AdminDashboard({ user, onLogout }: AdminDashboardProps) {
                 {activeView === 'users' && 'View and manage user accounts'}
               </p>
             </div>
+<<<<<<< HEAD
             <button
               onClick={() => setShowNotifications(true)}
               className="relative p-3 hover:bg-gray-100 rounded-lg transition-colors"
             >
+=======
+            <button className="relative p-3 hover:bg-gray-100 rounded-lg transition-colors">
+>>>>>>> b64e92c44009ab348791deb8f5a1b164104819e4
               <Bell className="w-6 h-6 text-gray-600" />
               {alertCount > 0 && (
                 <span className="absolute top-2 right-2 w-2 h-2 bg-red-500 rounded-full"></span>
@@ -189,6 +202,7 @@ export function AdminDashboard({ user, onLogout }: AdminDashboardProps) {
           </div>
         </header>
 
+<<<<<<< HEAD
         {/* Notifications Panel */}
         <Notifications
           isOpen={showNotifications}
@@ -196,6 +210,8 @@ export function AdminDashboard({ user, onLogout }: AdminDashboardProps) {
           userType="admin"
         />
 
+=======
+>>>>>>> b64e92c44009ab348791deb8f5a1b164104819e4
         {/* Content Area */}
         <div className="p-8">
           {activeView === 'overview' && <OverviewDashboard />}
@@ -205,6 +221,7 @@ export function AdminDashboard({ user, onLogout }: AdminDashboardProps) {
           {activeView === 'users' && <UserManagement />}
         </div>
       </main>
+<<<<<<< HEAD
 
       {/* Tutorial for first-time admin users */}
       <AdminTutorial
@@ -220,6 +237,8 @@ export function AdminDashboard({ user, onLogout }: AdminDashboardProps) {
           onComplete={handleMascotComplete}
         />
       )}
+=======
+>>>>>>> b64e92c44009ab348791deb8f5a1b164104819e4
     </div>
   );
 }
@@ -370,4 +389,8 @@ function OverviewDashboard() {
       </div>
     </div>
   );
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> b64e92c44009ab348791deb8f5a1b164104819e4

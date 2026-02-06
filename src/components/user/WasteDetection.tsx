@@ -11,8 +11,11 @@ import {
   TrendingUp,
   Download,
   RefreshCw,
+<<<<<<< HEAD
   Info,
   MoreHorizontal,
+=======
+>>>>>>> b64e92c44009ab348791deb8f5a1b164104819e4
 } from 'lucide-react';
 
 interface WasteDetectionProps {
@@ -44,7 +47,10 @@ const WASTE_ITEMS = [
   { type: 'headphones', name: 'Headphones', baseValue: 10, basePoints: 100, co2: 6 },
   { type: 'watch', name: 'Smart Watch', baseValue: 20, basePoints: 200, co2: 10 },
   { type: 'hard-drive', name: 'Hard Drive', baseValue: 12, basePoints: 120, co2: 8 },
+<<<<<<< HEAD
   { type: 'other', name: 'Other Electronics', baseValue: 6, basePoints: 60, co2: 4 },
+=======
+>>>>>>> b64e92c44009ab348791deb8f5a1b164104819e4
 ];
 
 export function WasteDetection({ user, onRecyclingComplete }: WasteDetectionProps) {
@@ -54,7 +60,10 @@ export function WasteDetection({ user, onRecyclingComplete }: WasteDetectionProp
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
   const [previewUrl, setPreviewUrl] = useState<string | null>(null);
   const [manualOverride, setManualOverride] = useState(false);
+<<<<<<< HEAD
   const [showAIExplainer, setShowAIExplainer] = useState(false);
+=======
+>>>>>>> b64e92c44009ab348791deb8f5a1b164104819e4
 
   const handleFileSelect = (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
@@ -241,6 +250,7 @@ export function WasteDetection({ user, onRecyclingComplete }: WasteDetectionProp
                 </div>
               </div>
             </div>
+<<<<<<< HEAD
 
             {/* AI Detection Explainer - Collapsible */}
             <div className="mt-6">
@@ -347,6 +357,8 @@ export function WasteDetection({ user, onRecyclingComplete }: WasteDetectionProp
                 }
               }
             `}} />
+=======
+>>>>>>> b64e92c44009ab348791deb8f5a1b164104819e4
           </div>
         )}
 
@@ -596,4 +608,8 @@ export function WasteDetection({ user, onRecyclingComplete }: WasteDetectionProp
       </div>
     </div>
   );
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> b64e92c44009ab348791deb8f5a1b164104819e4

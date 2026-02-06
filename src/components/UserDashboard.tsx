@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { useState, useEffect } from 'react';
 import { BinFinder } from './user/BinFinder';
 import { WasteDetection } from './user/WasteDetection';
@@ -20,17 +21,29 @@ import {
   Sparkles,
   Settings
 } from 'lucide-react';
+=======
+import { useState } from 'react';
+import { BinFinder } from './user/BinFinder';
+import { WasteDetection } from './user/WasteDetection';
+import { UserProfile } from './user/UserProfile';
+import { Map, ScanLine, User as UserIcon, LogOut, Home } from 'lucide-react';
+>>>>>>> b64e92c44009ab348791deb8f5a1b164104819e4
 
 interface UserDashboardProps {
   user: any;
   onLogout: () => void;
 }
 
+<<<<<<< HEAD
 type ActiveView = 'home' | 'finder' | 'scan' | 'profile' | 'features' | 'settings';
+=======
+type ActiveView = 'home' | 'finder' | 'scan' | 'profile';
+>>>>>>> b64e92c44009ab348791deb8f5a1b164104819e4
 
 export function UserDashboard({ user, onLogout }: UserDashboardProps) {
   const [activeView, setActiveView] = useState<ActiveView>('home');
   const [userData, setUserData] = useState(user);
+<<<<<<< HEAD
   const [showNotifications, setShowNotifications] = useState(false);
   const [showTutorial, setShowTutorial] = useState(false);
   const [showMascot, setShowMascot] = useState(false);
@@ -66,6 +79,8 @@ export function UserDashboard({ user, onLogout }: UserDashboardProps) {
   const handleRestartTutorial = () => {
     setShowTutorial(true);
   };
+=======
+>>>>>>> b64e92c44009ab348791deb8f5a1b164104819e4
 
   const handleRecyclingComplete = (item: any) => {
     // Update user data with new points and stats
@@ -78,17 +93,27 @@ export function UserDashboard({ user, onLogout }: UserDashboardProps) {
   };
 
   return (
+<<<<<<< HEAD
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900 flex flex-col transition-colors">
       {/* Header */}
       <header className="bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 sticky top-0 z-40 transition-colors">
         <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 bg-emerald-600 dark:bg-emerald-500 rounded-full flex items-center justify-center">
+=======
+    <div className="min-h-screen bg-gray-50 flex flex-col">
+      {/* Header */}
+      <header className="bg-white border-b border-gray-200 sticky top-0 z-40">
+        <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 bg-emerald-600 rounded-full flex items-center justify-center">
+>>>>>>> b64e92c44009ab348791deb8f5a1b164104819e4
               <span className="text-white font-bold text-lg">
                 {userData.name?.charAt(0).toUpperCase()}
               </span>
             </div>
             <div>
+<<<<<<< HEAD
               <div className="font-semibold text-gray-900 dark:text-white">{userData.name}</div>
               <div className="text-sm text-emerald-600 dark:text-emerald-400" data-tutorial="points">{userData.points} Points</div>
             </div>
@@ -158,20 +183,46 @@ export function UserDashboard({ user, onLogout }: UserDashboardProps) {
 
       {/* Main Content */}
       <main className="flex-1 pb-20">
+=======
+              <div className="font-semibold text-gray-900">{userData.name}</div>
+              <div className="text-sm text-emerald-600">{userData.points} Points</div>
+            </div>
+          </div>
+          <button
+            onClick={onLogout}
+            className="flex items-center gap-2 text-gray-600 hover:text-gray-900 transition-colors"
+          >
+            <LogOut className="w-5 h-5" />
+            <span className="hidden sm:inline">Logout</span>
+          </button>
+        </div>
+      </header>
+
+      {/* Main Content */}
+      <main className="flex-1">
+>>>>>>> b64e92c44009ab348791deb8f5a1b164104819e4
         {activeView === 'home' && (
           <div className="max-w-7xl mx-auto px-4 py-8">
             {/* Welcome Section */}
             <div className="mb-8">
+<<<<<<< HEAD
               <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">
                 Welcome back, {userData.name}! 👋
               </h1>
               <p className="text-gray-600 dark:text-gray-400">
+=======
+              <h1 className="text-3xl font-bold text-gray-900 mb-2">
+                Welcome back, {userData.name}! 👋
+              </h1>
+              <p className="text-gray-600">
+>>>>>>> b64e92c44009ab348791deb8f5a1b164104819e4
                 Let's make a positive impact on the environment today
               </p>
             </div>
 
             {/* Quick Stats */}
             <div className="grid md:grid-cols-3 gap-4 mb-8">
+<<<<<<< HEAD
               <div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-sm border border-gray-200 dark:border-gray-700">
                 <div className="text-3xl font-bold text-emerald-600 dark:text-emerald-500 mb-1">
                   {userData.points}
@@ -189,6 +240,25 @@ export function UserDashboard({ user, onLogout }: UserDashboardProps) {
                   {userData.co2Saved.toFixed(1)} kg
                 </div>
                 <div className="text-sm text-gray-600 dark:text-gray-400">CO₂ Saved</div>
+=======
+              <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
+                <div className="text-3xl font-bold text-emerald-600 mb-1">
+                  {userData.points}
+                </div>
+                <div className="text-sm text-gray-600">Total Points</div>
+              </div>
+              <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
+                <div className="text-3xl font-bold text-blue-600 mb-1">
+                  {userData.totalRecycled}
+                </div>
+                <div className="text-sm text-gray-600">Items Recycled</div>
+              </div>
+              <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
+                <div className="text-3xl font-bold text-green-600 mb-1">
+                  {userData.co2Saved.toFixed(1)} kg
+                </div>
+                <div className="text-sm text-gray-600">CO₂ Saved</div>
+>>>>>>> b64e92c44009ab348791deb8f5a1b164104819e4
               </div>
             </div>
 
@@ -196,6 +266,7 @@ export function UserDashboard({ user, onLogout }: UserDashboardProps) {
             <div className="grid md:grid-cols-2 gap-6">
               <button
                 onClick={() => setActiveView('finder')}
+<<<<<<< HEAD
                 className="group bg-white dark:bg-white rounded-2xl p-8 text-left hover:shadow-xl transition-all hover:scale-105 border border-gray-200"
               >
                 <div className="w-12 h-12 bg-emerald-500 rounded-xl flex items-center justify-center mb-4">
@@ -206,6 +277,16 @@ export function UserDashboard({ user, onLogout }: UserDashboardProps) {
                   Locate the nearest bin for your e-waste
                 </p>
                 <div className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-600">
+=======
+                className="group bg-gradient-to-br from-emerald-500 to-green-600 rounded-2xl p-8 text-white text-left hover:shadow-xl transition-all hover:scale-105"
+              >
+                <Map className="w-12 h-12 mb-4 opacity-90" />
+                <h2 className="text-2xl font-bold mb-2">Find E-Waste Bin</h2>
+                <p className="text-emerald-50 mb-4">
+                  Locate the nearest bin for your e-waste
+                </p>
+                <div className="inline-flex items-center gap-2 text-sm font-semibold">
+>>>>>>> b64e92c44009ab348791deb8f5a1b164104819e4
                   Start Finding
                   <span className="group-hover:translate-x-1 transition-transform">→</span>
                 </div>
@@ -213,6 +294,7 @@ export function UserDashboard({ user, onLogout }: UserDashboardProps) {
 
               <button
                 onClick={() => setActiveView('scan')}
+<<<<<<< HEAD
                 className="group bg-white dark:bg-white rounded-2xl p-8 text-left hover:shadow-xl transition-all hover:scale-105 border border-gray-200"
               >
                 <div className="w-12 h-12 bg-blue-500 rounded-xl flex items-center justify-center mb-4">
@@ -223,6 +305,16 @@ export function UserDashboard({ user, onLogout }: UserDashboardProps) {
                   Use AI detection to identify and recycle items
                 </p>
                 <div className="inline-flex items-center gap-2 text-sm font-semibold text-blue-600">
+=======
+                className="group bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl p-8 text-white text-left hover:shadow-xl transition-all hover:scale-105"
+              >
+                <ScanLine className="w-12 h-12 mb-4 opacity-90" />
+                <h2 className="text-2xl font-bold mb-2">Scan & Dispose</h2>
+                <p className="text-blue-50 mb-4">
+                  Use AI detection to identify and recycle items
+                </p>
+                <div className="inline-flex items-center gap-2 text-sm font-semibold">
+>>>>>>> b64e92c44009ab348791deb8f5a1b164104819e4
                   Start Scanning
                   <span className="group-hover:translate-x-1 transition-transform">→</span>
                 </div>
@@ -255,6 +347,7 @@ export function UserDashboard({ user, onLogout }: UserDashboardProps) {
                 </div>
               </div>
             </div>
+<<<<<<< HEAD
 
             {/* Quick Help / Tutorial Restart */}
             <div className="mt-8 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-6 border border-blue-200">
@@ -279,6 +372,8 @@ export function UserDashboard({ user, onLogout }: UserDashboardProps) {
                 </div>
               </div>
             </div>
+=======
+>>>>>>> b64e92c44009ab348791deb8f5a1b164104819e4
           </div>
         )}
 
@@ -287,6 +382,7 @@ export function UserDashboard({ user, onLogout }: UserDashboardProps) {
           <WasteDetection user={userData} onRecyclingComplete={handleRecyclingComplete} />
         )}
         {activeView === 'profile' && <UserProfile user={userData} />}
+<<<<<<< HEAD
         {activeView === 'features' && (
           <AllFeaturesPage />
         )}
@@ -307,11 +403,27 @@ export function UserDashboard({ user, onLogout }: UserDashboardProps) {
               }`}
               aria-label="Home"
               aria-current={activeView === 'home' ? 'page' : undefined}
+=======
+      </main>
+
+      {/* Bottom Navigation */}
+      <nav className="bg-white border-t border-gray-200 sticky bottom-0">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="flex justify-around">
+            <button
+              onClick={() => setActiveView('home')}
+              className={`flex flex-col items-center gap-1 py-3 px-6 transition-colors ${
+                activeView === 'home'
+                  ? 'text-emerald-600'
+                  : 'text-gray-400 hover:text-gray-600'
+              }`}
+>>>>>>> b64e92c44009ab348791deb8f5a1b164104819e4
             >
               <Home className="w-6 h-6" />
               <span className="text-xs font-medium">Home</span>
             </button>
             <button
+<<<<<<< HEAD
               data-tutorial="finder-tab"
               onClick={() => setActiveView('finder')}
               className={`flex flex-col items-center gap-1 py-3 px-4 transition-colors ${
@@ -331,11 +443,31 @@ export function UserDashboard({ user, onLogout }: UserDashboardProps) {
               }`}
               aria-label="Scan Item"
               aria-current={activeView === 'scan' ? 'page' : undefined}
+=======
+              onClick={() => setActiveView('finder')}
+              className={`flex flex-col items-center gap-1 py-3 px-6 transition-colors ${
+                activeView === 'finder'
+                  ? 'text-emerald-600'
+                  : 'text-gray-400 hover:text-gray-600'
+              }`}
+            >
+              <Map className="w-6 h-6" />
+              <span className="text-xs font-medium">Find Bin</span>
+            </button>
+            <button
+              onClick={() => setActiveView('scan')}
+              className={`flex flex-col items-center gap-1 py-3 px-6 transition-colors ${
+                activeView === 'scan'
+                  ? 'text-emerald-600'
+                  : 'text-gray-400 hover:text-gray-600'
+              }`}
+>>>>>>> b64e92c44009ab348791deb8f5a1b164104819e4
             >
               <ScanLine className="w-6 h-6" />
               <span className="text-xs font-medium">Scan</span>
             </button>
             <button
+<<<<<<< HEAD
               data-tutorial="profile-tab"
               onClick={() => setActiveView('profile')}
               className={`flex flex-col items-center gap-1 py-3 px-4 transition-colors ${
@@ -343,10 +475,19 @@ export function UserDashboard({ user, onLogout }: UserDashboardProps) {
               }`}
               aria-label="Profile"
               aria-current={activeView === 'profile' ? 'page' : undefined}
+=======
+              onClick={() => setActiveView('profile')}
+              className={`flex flex-col items-center gap-1 py-3 px-6 transition-colors ${
+                activeView === 'profile'
+                  ? 'text-emerald-600'
+                  : 'text-gray-400 hover:text-gray-600'
+              }`}
+>>>>>>> b64e92c44009ab348791deb8f5a1b164104819e4
             >
               <UserIcon className="w-6 h-6" />
               <span className="text-xs font-medium">Profile</span>
             </button>
+<<<<<<< HEAD
             <button
               onClick={() => setActiveView('features')}
               className={`flex flex-col items-center gap-1 py-3 px-4 transition-colors ${
@@ -369,9 +510,15 @@ export function UserDashboard({ user, onLogout }: UserDashboardProps) {
               <Settings className="w-6 h-6" />
               <span className="text-xs font-medium">Settings</span>
             </button>
+=======
+>>>>>>> b64e92c44009ab348791deb8f5a1b164104819e4
           </div>
         </div>
       </nav>
     </div>
   );
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> b64e92c44009ab348791deb8f5a1b164104819e4
